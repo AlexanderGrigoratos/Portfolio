@@ -1,0 +1,327 @@
+.textbox {
+  height: 700px!important;
+}
+  
+  /* 01 ---- NAVIGATION SECTION CSS  */
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color:  rgb(3 10 65 / 95%);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link {
+      transition: none;
+    }
+  }
+  .nav-link:hover, .nav-link:focus {
+    color:  rgb(3 10 65 / 95%);
+  }
+  .nav-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+  }
+  /* 01 ---- NAVIGATION SECTION CSS  */
+
+/* PROGRESS BAR DESIGN  */
+.progress {
+  display: flex;
+  margin-bottom: 10px!;
+  vertical-align: baseline;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+.progress-bar {
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background: linear-gradient(to right, rgb(3 10 65 / 95%), rgb(22 9 227 / 95%));
+  transition: width 0.6s ease;
+}
+/* PROGRESS BAR DESIGN  */
+/* WEATHER CARD DESIGN  */
+.card {
+padding: 1rem!important;
+margin: 1.5rem 4vw!important;
+border-radius: 1rem!important;
+background-color: #169cff!important; /* Adjust the transparency as needed */
+border: 1px solid rgba(255, 255, 255, 0.2)!important; /* Adjust the transparency as needed */
+box-shadow: 0 4px 6px #169cff, 0 1px 3px rgba(0, 0, 0, 0.1)!important; /* Add a subtle shadow */
+text-align: center;
+backdrop-filter: blur(8px); /* Apply a blur effect to simulate a glass-like effect */
+}
+.card:hover {
+transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out, box-shadow 0.3s ease-in-out!important;
+background-color: rgba(255, 255, 255, 0.3)!important; /* Adjust the transparency as needed */
+border: 1px solid rgba(255, 255, 255, 0.3)!important; /* Adjust the transparency as needed */
+box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.2)!important; /* Enhance the shadow on hover */
+}
+.title{
+justify-content: center;
+position: absolute;
+left: 50%;
+-webkit-transform: translateX(-50%);
+transform: translateX(-50%)
+}
+.title p{
+margin-bottom: 0.2rem;
+font-size: 1.2rem;
+font-weight: 500;
+}
+.temp{
+font-size: 2.6rem;
+margin-bottom: 1rem;
+font-weight: 800;
+}
+.header{
+color: #dddddd;
+}
+.col-4{
+padding: 0 0.2rem;
+}
+.icon{
+align-self: flex-end;
+margin-right: -2.5rem;
+margin-top: -2rem;
+z-index: 999;
+}
+.icon img{
+width: 5rem;
+}
+/* WEATHER CARD DESIGN  */
+/* SMALL ELEMENT DESIGN  */
+sub,
+sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/* SMALL ELEMENT DESIGN  */
+/* FONT SIZE INCREASE - DECREASE IN SECTIONS  */
+.display-2 {
+  font-size: calc(1.575rem + 3.9vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+@media (min-width: 1200px) {
+  .display-2 {
+    font-size: 4.5rem;
+  }
+}
+.display-3 {
+  font-size: calc(1.525rem + 3.3vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+@media (min-width: 1200px) {
+  .display-3 {
+    font-size: 4rem;
+  }
+}
+/* FONT SIZE INCREASE - DECREASE IN SECTIONS  */
+/* ABOUT ME SECTION NAMED TESTIMONIALS */
+.testimonials {
+  position: relative;
+  padding: 0;
+  background: linear-gradient(to right, rgb(3 10 65 / 95%), rgb(22 9 227 / 95%));
+}
+.testimonials__card {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2rem 1.25rem;
+  border-radius: 0.625rem;
+  height: auto;
+  text-align: center;
+}
+.testimonials__card i {
+  font-size: 1.5rem;
+  color: rgba(153, 38, 240, 0.7);
+}
+.testimonials__card .ratings i {
+  color: rgba(153, 38, 240, 0.7);
+  font-size: 1rem;
+}
+.testimonials__picture {
+  width: 6rem;
+  height: 6rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.testimonials__picture img {
+  border: 0.325rem solid rgba(153, 38, 240, 0.7);
+}
+.testimonials__name {
+  padding-top: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 500;
+  color: #fff;
+}
+.testimonials__name h3 {
+  padding-top: 0.8rem;
+  text-transform: capitalize;
+}
+.testimonials__name p {
+  padding-bottom: 2rem;
+  text-transform: capitalize;
+}
+/* ABOUT ME SECTION NAMED TESTIMONIALS */
+/* CONTACT SECTION DESING  */
+.get-started {
+  padding: 4rem 0;
+}
+.cta-info {
+  padding: 3rem;
+  margin: 1rem 0;
+}
+.cta-info__list {
+  position: relative;
+  list-style-type: none;
+  display: block;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+.cta-info__list li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  font-weight: 600;
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+/* CONTACT SECTION DESING  */
+/* FOOTER SECTION DESIGN  */
+.footer {
+  padding-top: 1rem;
+  background-color: #151414;
+}
+.contact-box {
+  position: relative;
+}
+.contact-box__icon {
+  width: 2rem;
+  stroke:  rgb(3 10 65 / 95%);
+  padding-top: 0.5rem;
+}
+@media (min-width: 576px) {
+  .contact-box__icon {
+    width: 4rem;
+  }
+}
+.contact-box__info {
+  padding: 0.4rem;
+  font-weight: 600;
+}
+.contact-box__info--title {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+@media (min-width: 576px) {
+  .contact-box__info--title {
+    font-size: 1.4rem;
+  }
+}
+.contact-box__info--subtitle {
+  font-size: 0.8rem;
+  color: #6c757d;
+  text-decoration: none;
+}
+@media (min-width: 576px) {
+  .contact-box__info--subtitle {
+    font-size: 1rem;
+  }
+}
+.footer-sm a {
+  color: #fff;
+}
+.footer-sm a i {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+@media (min-width: 576px) {
+  .footer-sm a i {
+    font-size: 1.6rem;
+  }
+}
+.footer-sm a:hover {
+  color:  rgb(3 10 65 / 95%);
+}
+.campany-list {
+  display: block;
+  list-style-type: none;
+  position: relative;
+}
+.campany-list li {
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+.campany-list li a {
+  color: #fff;
+  text-decoration: none;
+}
+.campany-list li a:hover {
+  color:  rgb(3 10 65 / 95%);
+}
+.footer-bottom {
+  background-color: #000;
+}
+.footer-bottom__copyright {
+  color: #6c757d;
+  font-weight: 400;
+}
+.footer-bottom__copyright a {
+  color: #dee2e6;
+  text-decoration: none;
+}
+.footer-bottom__copyright a:hover {
+  color:  rgb(3 10 65 / 95%);
+  text-decoration: underline;
+}
+.footer{
+  background: linear-gradient(to right, rgb(3 10 65 / 95%), rgb(22 9 227 / 95%));
+}
+/* FOOTER SECTION DESIGN  */
+/* BACK TO TOP BUTTON DESIGN  */
+.back-to-top {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  z-index: 9999;
+}
+.back-to-top i {
+  color: #fff;
+  font-size: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* BACK TO TOP BUTTON DESIGN  */

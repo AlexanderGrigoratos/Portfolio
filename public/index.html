@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="Alex"
+      content="Alexander Grigoratos - Data Analyst"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>ALEX | Portfolio Website</title>
+    <link rel="stylesheet" href="assets/css/bootstrapPlugin.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/style.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+    <script>
+      var delay = 500;
+      $(document).ready(function () {
+        $(".progress-bar").each(function (i) {
+          $(this).delay(delay * i).animate(
+            { width: $(this).attr('aria-valuenow') + '%' },
+            delay
+          );
+
+          $(this)
+            .prop('Counter', 0)
+            .animate(
+              {
+                Counter: $(this).text(),
+              },
+              {
+                duration: delay,
+                easing: 'swing',
+                step: function (now) {
+                  $(this).text(Math.ceil(now) + '%');
+                },
+              }
+            );
+        });
+      });
+    </script>
+
+    <style>
+     .progress {
+        margin-bottom: 10px!;
+      }
+
+      .progress-bar {
+        width: 0;
+        background: linear-gradient(to right, rgb(3 10 65 / 95%), rgb(22 9 227 / 95%));
+      }
+    
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <a href="#" class="shadow btn-primary rounded-circle back-to-top">
+      <i class="fas fa-chevron-up"></i>
+    </a>
+
+
+
+    <script src="%PUBLIC_URL%/assets/vendors/js/glightbox.min.js"></script>
+    <script src="%PUBLIC_URL%/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+      // Replace 'YOUR_API_KEY' with your actual OpenWeatherMap API key
+      const apiKey = '4cbaf15a8f33cbf1854ab058a62b2fdf';
+      const city = 'Montreal'; // Replace with the desired city
+      const country = 'Canada'; // Replace with the desired country code
+  
+      // Fetch weather data
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`)
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+          })
+          .then(data => {
+              // Extract relevant information from the API response
+              const temperatureKelvin = data.main.temp;
+              const weatherDescription = data.weather[0].description;
+              const cityName = data.name;
+              const countryName = data.sys.country;
+              const weatherIconCode = data.weather[0].icon;
+  
+              // Convert temperature from Kelvin to Celsius
+              const temperatureCelsius = temperatureKelvin - 273.15;
+  
+              // Update the HTML elements with the fetched data
+              document.getElementById('cityDetails').innerHTML = `<p>${cityName}, ${countryName}</p>`;
+              document.getElementById('temperature').innerHTML = `${temperatureCelsius.toFixed(2)} <sup>&deg;</sup>`;
+              document.getElementById('description').innerText = weatherDescription;
+  
+              // Update the weather icon dynamically based on the icon code
+              const weatherIconElement = document.getElementById('weatherIcon');
+              weatherIconElement.src = `https://openweathermap.org/img/w/${weatherIconCode}.png`;
+          })
+          .catch(error => {
+              console.error('Error fetching weather data:', error.message);
+              // Display an error message if needed
+              const weatherDetailsContainer = document.getElementById('weatherDetails');
+              weatherDetailsContainer.innerHTML = '<p>Error fetching weather data</p>';
+          });
+      });
+ 
+    </script>
+    
+  </body>
+</html>
